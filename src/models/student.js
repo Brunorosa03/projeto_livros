@@ -1,26 +1,27 @@
-const student_controller = require("../controllers/student.js")
-
-let proxId = 1;
+let proxId = 1
 
 const model = (body, id = proxId++) => {
+    console.log(body)
     if(
         body.nome != undefined &&
         body.matricula != undefined &&
+        body.ano != undefined &&
         body.curso != undefined &&
-        !isNaN(body.ano) &&
         body.nome != "" &&
-        student_controller.show(body.rede_id)
+        body.matricula != "" &&
+        body.ano != "" &&
+        body.curso != "" 
+
     ) {
         return {
             id,
-            Nome: body.nome,
-            Matricula: body.matricula,
-            Curso: body.curso,
-            Ano: body.numero
+            Título: body.nome,
+            Autor:  body.matricula,
+            Ano:    body.ano,
+            Gênero: body.curso
+
         }
     }
 }
 
-module.exports = {
-    model
-}
+module.exports = model

@@ -1,34 +1,30 @@
-const controllers_rental = require("../controllers/rental.js")
-
-let nextId = 1
+let proxId = 1
 
 const model = (body, id = proxId++) => {
+    console.log(body)
     if(
         body.titulo != undefined &&
         body.autor != undefined &&
-        !isNaN(body.ano) &&
+        body.ano != undefined &&
         body.genero != undefined &&
         body.titulo != "" &&
         body.autor != "" &&
-        body.genero != "" &&
-        book_controller.show(body.rede_id)
+        body.ano != "" &&
+        body.genero != "" 
+
     ) {
         return {
             id,
             Título: body.titulo,
-            Autor: body.autor,
-            Ano: body.ano,
+            Autor:  body.autor,
+            Ano:    body.ano,
             Gênero: body.genero
+
         }
     }
 }
 
-module.exports = {
-    model
-}
-
-
-
+module.exports = model
 
 
 //Estrutura do ProjetoTipo de Dado: Livro (Book)

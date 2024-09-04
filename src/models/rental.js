@@ -1,33 +1,28 @@
-const controllers_rental = require("../controllers/rental.js")
+const book_controller = require("../controllers/book.js")
+const student_controller = require("../controllers/student.js")
 
 let nextId = 1
 
+const model = (body, id = nextId++) => {
+    console.log(body)
 
-const model = (body, id = proxId++) => {
     if(
-        body.livro != undefined &&
-        body.estudante != undefined &&
-        !isNaN(body.data)&&
-        body.aluguel != undefined &&
-        body.livro != "" &&
-        body.estudante != "" &&
-        student_controller.show(body.rede_id)
+        body.data_aluguel != undefined &&
+        body.data_devolucao != undefined &&
+        body.data_aluguel != "" &&
+        body.data_devolucao != ""
     ) {
-        return {
-            id,
-            Livro: body.livro,
-            Estudante: body.estudante,
-            Data: body.data,
-            Aluguel: body.aluguel
+        return{
+            id, 
+            Book: body.book_id,
+            Estudante: body.student_id,
+            Aluguel: body.data_aluguel,
+            Devolução: body.data_devolucao
         }
     }
 }
 
-module.exports = {
-    model
-}
-
-
+module.exports = model
 
 
 
