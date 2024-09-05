@@ -3,7 +3,7 @@ const book_router = require("./routes/book.js")
 const student_router = require("./routes/student.js")
 const rental_router = require("./routes/rental.js")
 const app = express()
-const port = 7000
+const port = 8000
 
 app.use(express.json())
 // app.use(cep_endereco) // Middleware de uso global
