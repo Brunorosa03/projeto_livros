@@ -8,6 +8,7 @@ const show = id => db.find(el => el.id == id)
 
 const store = (body) => {
     const novo = model(body)
+    console.log(novo)
 
     if (novo) {
         db.push(novo)

@@ -14,10 +14,10 @@ const model = (body, id = nextId++) => {
     ) {
         return{
             id, 
-            Book: body.book_id,
-            Estudante: body.student_id,
-            Aluguel: body.data_aluguel,
-            Devolução: body.data_devolucao
+            book: body.book_id,
+            estudante: body.student_id,
+            aluguel: body.data_aluguel,
+            devolucao: body.data_devolucao
         }
     }
 }

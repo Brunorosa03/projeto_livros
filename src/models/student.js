@@ -15,10 +15,10 @@ const model = (body, id = proxId++) => {
     ) {
         return {
             id,
-            Título: body.nome,
-            Autor:  body.matricula,
-            Ano:    body.ano,
-            Gênero: body.curso
+            nome: body.nome,
+            matricula:  body.matricula,
+            ano:    body.ano,
+            genero: body.curso
 
         }
     }
